@@ -2,11 +2,11 @@
 
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Hype Interactive</title>
+    <title>Wallet Wise</title>
     <meta name="description" content="Build, what matters">
-    <meta name="author" content="Hype interactive">
+    <meta name="author" content="Patrick Mamsery">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- stylesheets inclusion  --}}
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="">
 
 
-    
+
 </head>
 <body>
 
@@ -30,9 +30,9 @@
       <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
       <script src="/js/animations.js" type="text/javascript"></script>
       <script src="/js/main.js" type="text/javascript"></script>
-      <script src="/js/live.js" type="text/javascript"></script> 
-      <script src="https://kit.fontawesome.com/68b4c1056b.js" crossorigin="anonymous"></script> 
-      
+      <script src="/js/live.js" type="text/javascript"></script>
+      <script src="https://kit.fontawesome.com/68b4c1056b.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
 

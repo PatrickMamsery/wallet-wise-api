@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Hype templates</title>
+        <title>Wallet Wise</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,9 +24,9 @@
     </head>
     <body class="antialiased">
         <div class="container" style="text-align: center; margin-top:300px;">
-            <H1>Laravel Website Template</H1>
-            <p>Github repository: <a href="" style="color: #00ABCC" >laravel-web-template</a></p>
-            <small><strong>Hype Interactive</strong></small>
+            <h1>Wallet Wise API</h1>
+            <p>Github repository: <a href="https://github.com/PatrickMamsery/wallet-wise-api" style="color: #00ABCC" >wallet-wise-api</a></p>
+            <small><strong>Wallet Wise</strong></small>
         </div>
     </body>
 </html>
