@@ -93,15 +93,11 @@ class BudgetController extends BaseController
 
         $user = Auth::user();
 
-        $userBudgets = UserBudget::where('user_id', $user->id)->get()->pluck('id')->toArray();
-
-        $budgetItems = BudgetItem::whereIn('id', $userBudgets);
-
         if (!BudgetItem::find($id)) {
             return $this->sendError('NOT_FOUND', 404);
         } else {
             $budgetItem = BudgetItem::find($id);
-            // Get expenses for the authenticated user
+            // Get budget items for the authenticated user
             $budgetItems = BudgetItem::whereIn('id', UserBudget::where('user_id', $user->id)->get()->pluck('id')->toArray())->pluck('id')->toArray();
             // if the budgetItem does not belong to the authenticated user, return error
             if (!in_array($budgetItem->id, $budgetItems)) {
