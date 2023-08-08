@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\API\BudgetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PassportAuthController;
+use App\Http\Controllers\API\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,25 @@ Route::get('api-test', function() {
 
 Route::post('/register', [PassportAuthController::class, 'register']);
 Route::post('/login', [PassportAuthController::class, 'login'])->name('login.api');
+
+
+Route::middleware('auth:api')->group(function() {
+
+    Route::group(['middleware' => 'withoutlink'], function() {
+        Route::apiResource('budgets', BudgetController::class);
+
+        Route::apiResource('expenses', ExpenseController::class);
+
+        // Route::apiResource('expenses', ExpenseController::class);
+    });
+
+    // Password manipulation routes
+    Route::post('change-password', [UserController::class, 'changePassword']);
+
+    Route::post('/logout', [PassportAuthController::class, 'logout']);
+
+    Route::get('/test', function() {
+        return response()->json(['message' => 'Hello World!'], 200);
+    });
+});
+

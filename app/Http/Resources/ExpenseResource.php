@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\ExpenseItem;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ExpenseResource extends JsonResource
@@ -14,6 +15,11 @@ class ExpenseResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'budget' => $this->budgetItem->title,
+            'amount' => $this->amount,
+            'expense_items' => ExpenseItem::where('expense', $this->id)->get(['title', 'amount'])
+        ];
     }
 }
