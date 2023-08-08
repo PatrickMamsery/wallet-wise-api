@@ -13,4 +13,8 @@ class Expense extends Model
         'amount',
         'budget_item_id',
     ];
+
+    public function budgetItem() {
+        return $this->belongsTo(BudgetItem::class, 'budget_item_id', 'id');
+    }
 }

@@ -17,6 +17,7 @@ class CreateExpenseItemsTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->unsignedInteger('expense_id');
+            $table->decimal('amount', 13, 2)->nullable()->default(0.00);
 
             $table->index(['expense_id'], "fk_expense_item_expenses_idx");
 

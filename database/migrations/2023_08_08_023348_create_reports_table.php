@@ -15,6 +15,12 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamp('date')->nullable()->default(today());
+            $table->decimal('total_expense', 15, 2)->nullable()->default(0.00);
+            $table->decimal('total_budget', 15, 2)->nullable()->default(0.00);
+            $table->decimal('total_income', 15, 2)->nullable()->default(0.00);
+            $table->decimal('saved_amount', 15, 2)->nullable()->default(0.00);
+            $table->decimal('spent_amount', 15, 2)->nullable()->default(0.00);
             $table->timestamps();
         });
     }
